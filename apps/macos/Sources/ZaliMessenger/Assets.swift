@@ -1438,8 +1438,8 @@ body[data-nav-mode="servers"] .contacts {
 }
 
 #viewSettings {
-    grid-template-rows: 72px 1fr;
-    background: rgba(0,0,0,.16);
+    grid-template-rows: auto 1fr;
+    background: rgba(0,0,0,.10);
 }
 
 #viewHub {
@@ -2745,10 +2745,10 @@ body[data-nav-mode="servers"] .contacts {
 
 .settings-topbar {
     justify-content: space-between;
-    align-items: flex-start;
-    gap: 18px;
-    padding-top: 14px;
-    padding-bottom: 14px;
+    align-items: center;
+    gap: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 .settings-topcopy {
@@ -2759,19 +2759,18 @@ body[data-nav-mode="servers"] .contacts {
 }
 
 .settings-kicker {
-    color: var(--lime);
-    font-size: 10px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: .14em;
+    color: var(--text3);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .04em;
 }
 
 .settings-lead {
-    max-width: 760px;
-    margin: 0;
-    color: var(--text2);
-    font-size: 12px;
-    line-height: 1.5;
+    max-width: 640px;
+    margin: 2px 0 0;
+    color: var(--text3);
+    font-size: 13px;
+    line-height: 1.4;
 }
 
 .hdr-btn,
@@ -2799,7 +2798,7 @@ body[data-nav-mode="servers"] .contacts {
 }
 
 .settings-body {
-    padding: 24px;
+    padding: 16px 20px 28px;
 }
 
 .settings-scroll {
@@ -2813,97 +2812,40 @@ body[data-nav-mode="servers"] .contacts {
 .settings-shell {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    max-width: 1280px;
+    gap: 14px;
+    max-width: 1080px;
     width: 100%;
     margin: 0 auto;
-    padding-bottom: 48px;
+    padding-bottom: 32px;
 }
 
 .settings-card {
     position: relative;
     overflow: hidden;
-    padding: 18px;
+    padding: 16px 18px;
     border: 1px solid var(--border);
-    border-radius: 18px;
-    background:
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)),
-        rgba(255,255,255,.02);
-    box-shadow: 0 18px 48px rgba(0,0,0,.16);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    animation: card-rise .3s cubic-bezier(.2,.8,.2,1) both;
+    border-radius: 14px;
+    background: rgba(255,255,255,.03);
+    box-shadow: none;
+    animation: none;
     content-visibility: auto;
-    contain-intrinsic-size: 220px;
+    contain-intrinsic-size: 180px;
 }
 
 .settings-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(135deg, rgba(var(--accent-rgb),.08), transparent 28%);
-    opacity: .6;
-}
-
-.settings-hero {
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) auto;
-    gap: 20px;
-    align-items: center;
-}
-
-.settings-hero-copy {
-    position: relative;
-    z-index: 1;
-}
-
-.settings-hero-copy h2 {
-    margin: 4px 0 8px;
-    color: var(--text);
-    font-size: 22px;
-    line-height: 1.18;
-}
-
-.settings-hero-copy p {
-    margin: 0;
-    max-width: 760px;
-    color: var(--text2);
-    font-size: 13px;
-    line-height: 1.6;
-}
-
-.settings-chips {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: flex-end;
-}
-
-.settings-chip {
-    padding: 8px 12px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    background: rgba(255,255,255,.04);
-    color: var(--text);
-    font-size: 11px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: .08em;
+    display: none;
 }
 
 .settings-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
-    gap: 20px;
+    gap: 14px;
     align-items: start;
 }
 
 .settings-column {
     display: grid;
-    gap: 20px;
+    gap: 14px;
 }
 
 .settings-card-head {
@@ -2913,7 +2855,7 @@ body[data-nav-mode="servers"] .contacts {
     align-items: flex-start;
     justify-content: space-between;
     gap: 14px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 }
 
 .settings-card-head--tight {
@@ -2921,46 +2863,43 @@ body[data-nav-mode="servers"] .contacts {
 }
 
 .settings-card-title {
-    margin: 4px 0 0;
+    margin: 2px 0 0;
     color: var(--text);
-    font-size: 15px;
-    font-weight: 900;
+    font-size: 16px;
+    font-weight: 800;
 }
 
 .settings-card-note {
     flex: none;
     color: var(--text3);
-    font-size: 11px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: .08em;
+    font-size: 12px;
+    font-weight: 700;
 }
 
 .settings-theme-grid {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+    gap: 8px;
 }
 
 .settings-theme-grid .btn-theme {
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    min-height: 42px;
-    padding: 0 14px;
+    min-height: 38px;
+    padding: 0 12px;
     border: 1px solid rgba(255,255,255,.06);
-    border-radius: 12px;
+    border-radius: 10px;
     background-clip: padding-box;
     -webkit-background-clip: padding-box;
     color: #0b0b0b;
     cursor: pointer;
-    font-size: 11px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: .08em;
-    box-shadow: 0 10px 24px rgba(0,0,0,.18);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .01em;
+    box-shadow: none;
     transition: transform .18s var(--ease-out), box-shadow .18s var(--ease-out), filter .18s var(--ease-out), border-color .18s var(--ease-out);
     animation: chip-pop .22s cubic-bezier(.2,.9,.18,1) both;
 }
@@ -4797,8 +4736,14 @@ body[data-nav-mode="servers"] .contacts {
 .settings-help {
     margin: 0;
     color: var(--text3);
-    font-size: 11px;
-    line-height: 1.55;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.settings-status {
+    text-align: center;
+    font-weight: 700;
+    margin-top: 4px;
 }
 
 .crypto-key-value {
@@ -4850,10 +4795,8 @@ body[data-nav-mode="servers"] .contacts {
 }
 
 .settings-card--danger {
-    border-color: rgba(255,255,255,.08);
-    background:
-        linear-gradient(180deg, rgba(255,77,109,.08), rgba(255,255,255,.015)),
-        rgba(255,255,255,.02);
+    border-color: rgba(255,77,109,.22);
+    background: rgba(255,77,109,.06);
 }
 
 .settings-card--danger .settings-help {
@@ -6387,7 +6330,6 @@ body[data-nav-mode="servers"] .contacts {
 }
 
 @media (max-width: 1100px) {
-    .settings-hero,
     .settings-grid {
         grid-template-columns: 1fr;
     }
@@ -6407,10 +6349,6 @@ body[data-nav-mode="servers"] .contacts {
 
     .server-modal-grid {
         overflow: visible;
-    }
-
-    .settings-chips {
-        justify-content: flex-start;
     }
 
     .settings-control-row {
@@ -8423,8 +8361,6 @@ body[data-experimental-design="on"] ::-webkit-scrollbar-thumb:hover {
 
 /* ============================================================================
    MOBILE REDESIGN 2026 — Phase C: conversation (bubbles, time, composer)
-"""#,
-    #"""
    ========================================================================== */
 @media (max-width: 760px) {
     /* Bubbles hug their content a bit tighter and use softer shadows. */
@@ -8450,6 +8386,8 @@ body[data-experimental-design="on"] ::-webkit-scrollbar-thumb:hover {
 
     /* Timestamp INSIDE the bubble (the desktop design floats it in the margin,
        which clips off-screen on a phone). Render it as a compact right-aligned
+"""#,
+    #"""
        line at the bottom of the bubble — never overlapping the text. */
     #viewChat .msg-time {
         position: static;
@@ -10326,45 +10264,29 @@ body[data-experimental-design="on"] ::-webkit-scrollbar-thumb:hover {
                 <div id="viewSettings" class="view">
                     <div class="logs-bar settings-topbar">
                         <div class="settings-topcopy">
-                            <span class="settings-kicker">Центр управления</span>
                             <span class="logs-title">Настройки</span>
-                            <p class="settings-lead">Кастомизация интерфейса, журнал событий и действия аккаунта в одном месте.</p>
+                            <p class="settings-lead">Тема, звук, кеш и аккаунт на этом устройстве.</p>
                         </div>
                         <button class="btn-flat" id="closeSettings">Назад</button>
                     </div>
                     <div class="settings-body settings-scroll">
                         <div class="settings-shell">
-                            <section class="settings-card settings-hero">
-                                <div class="settings-hero-copy">
-                                    <span class="settings-kicker">Быстрый обзор</span>
-                                    <h2>Настройте внешний вид, проверьте журнал и управляйте параметрами без лишних переходов.</h2>
-                                    <p>Меню разделено на понятные блоки, чтобы основные действия были под рукой и не терялись в длинном списке.</p>
-                                </div>
-                                <div class="settings-chips">
-                                    <span class="settings-chip">Styler</span>
-                                    <span class="settings-chip">Logs</span>
-                                    <span class="settings-chip">Crypto</span>
-                                    <span class="settings-chip">Account</span>
-                                </div>
-                            </section>
-
                             <section class="settings-card">
                                 <div class="settings-card-head">
                                     <div>
-                                        <span class="settings-kicker">Profile</span>
-                                        <h3 class="settings-card-title">Аватар профиля</h3>
+                                        <span class="settings-kicker">Профиль</span>
+                                        <h3 class="settings-card-title">Аватар</h3>
                                     </div>
-                                    <span class="settings-card-note" id="avatarTargetLabel">sync</span>
                                 </div>
                                 <div class="avatar-editor">
                                     <div class="avatar-editor-preview">
                                         <div class="ava avatar-preview" id="avatarPreview">Z</div>
                                     </div>
                                     <div class="avatar-editor-copy">
-                                        <p class="settings-help">Загрузите картинку для своего профиля — она сохранится на сервере и будет видна всем вашим собеседникам на других устройствах. После обновления аватар автоматически подтянется в списке контактов, шапке чата и профиле.</p>
+                                        <p class="settings-help">Картинка видна всем собеседникам. После загрузки она появится в чатах и профиле.</p>
                                         <div class="avatar-editor-actions">
                                             <button class="btn-flat avatar-upload-btn" id="avatarUploadBtn" type="button">Загрузить</button>
-                                            <button class="btn-flat" id="avatarResetBtn" type="button">Сбросить аватар</button>
+                                            <button class="btn-flat" id="avatarResetBtn" type="button">Удалить</button>
                                         </div>
                                     </div>
                                 </div>
@@ -10373,29 +10295,28 @@ body[data-experimental-design="on"] ::-webkit-scrollbar-thumb:hover {
                             <section class="settings-card">
                                 <div class="settings-card-head">
                                     <div>
-                                        <span class="settings-kicker">Interface v2</span>
-                                        <h3 class="settings-card-title">Новая навигация и Хаб</h3>
+                                        <span class="settings-kicker">Навигация</span>
+                                        <h3 class="settings-card-title">Кнопки разделов</h3>
                                     </div>
-                                    <span class="settings-card-note">experimental</span>
                                 </div>
                                 <div class="settings-stack">
                                     <label class="server-toggle settings-toggle">
                                         <input id="inputUiV2Enabled" type="checkbox">
                                         <span>
-                                            <strong>Включить новый интерфейс</strong>
-                                            <small>Скрывает переключатель ЛС/Сервера и показывает сегменты под названием приложения</small>
+                                            <strong>Сегменты под названием приложения</strong>
+                                            <small>Вместо переключателя «Чаты / Серверы» — кнопки разделов. Хаб всегда последняя.</small>
                                         </span>
                                     </label>
                                     <div class="settings-control-box">
                                         <div class="settings-card-head settings-card-head--tight">
                                             <div>
-                                                <span class="settings-kicker">Segments</span>
-                                                <h3 class="settings-card-title">Кнопки под названием</h3>
+                                                <span class="settings-kicker">Состав</span>
+                                                <h3 class="settings-card-title">Что показать перед Хабом</h3>
                                             </div>
                                             <span class="settings-card-note" id="hubSegmentsCount">3 / 4</span>
                                         </div>
                                         <div class="hub-segment-settings" id="hubSegmentSettings"></div>
-                                        <p class="settings-help">Выберите от 1 до 3 разделов перед Хабом. Последняя кнопка всегда Хаб, поэтому всего будет от 2 до 4 кнопок.</p>
+                                        <p class="settings-help">Можно выбрать от одного до трёх разделов. Всего кнопок будет от двух до четырёх.</p>
                                     </div>
                                 </div>
                             </section>
@@ -10403,41 +10324,48 @@ body[data-experimental-design="on"] ::-webkit-scrollbar-thumb:hover {
                             <section class="settings-card">
                                 <div class="settings-card-head">
                                     <div>
-                                        <span class="settings-kicker">Тема интерфейса</span>
-                                        <h3 class="settings-card-title">Стиль оформления</h3>
+                                        <span class="settings-kicker">Вид</span>
+                                        <h3 class="settings-card-title">Оформление</h3>
                                     </div>
-                                    <span class="settings-card-note">design</span>
                                 </div>
                                 <div class="settings-stack">
                                     <div class="design-mode-options" id="designModeOptions"></div>
-                                    <p class="settings-help">Цветовая схема, шрифты и вся логика приложения не меняются — переключается только оформление. Выбор сохраняется на этом устройстве.</p>
+                                    <p class="settings-help">Классический оставляет градиенты и свечения, плоский убирает их. Цвета ниже — отдельно.</p>
+                                    <div class="theme-buttons settings-theme-grid">
+                                        <button class="btn-theme theme-lime" data-theme="lime" type="button">Лайм</button>
+                                        <button class="btn-theme theme-cyber" data-theme="cyber" type="button">Киберпанк</button>
+                                        <button class="btn-theme theme-matrix" data-theme="matrix" type="button">Матрица</button>
+                                        <button class="btn-theme theme-ocean" data-theme="ocean" type="button">Океан</button>
+                                        <button class="btn-theme theme-mono" data-theme="mono" type="button">Моно</button>
+                                        <button class="btn-theme theme-ember" data-theme="ember" type="button">Уголь</button>
+                                        <button class="btn-theme theme-aurora" data-theme="aurora" type="button">Сияние</button>
+                                        <button class="btn-theme theme-graphite" data-theme="graphite" type="button">Графит</button>
+                                        <button class="btn-theme theme-rose" data-theme="rose" type="button">Роза</button>
+                                        <button class="btn-theme theme-violet" data-theme="violet" type="button">Фиолет</button>
+                                    </div>
                                 </div>
                             </section>
 
                             <section class="settings-card">
                                 <div class="settings-card-head">
                                     <div>
-                                        <span class="settings-kicker">Storage</span>
-                                        <h3 class="settings-card-title">Кеш аватарок и медиа</h3>
+                                        <span class="settings-kicker">Память</span>
+                                        <h3 class="settings-card-title">Кеш картинок</h3>
                                     </div>
-                                    <span class="settings-card-note">cache</span>
                                 </div>
                                 <div class="settings-stack">
-                                    <!-- Содержимое рисует renderCacheSettings() (web/src/interface/cache.js):
-                                         режимы, слайдер потолка и сводка обращений считаются из индекса
-                                         в памяти и меняются на каждой записи в кеш. -->
+                                    <!-- Содержимое рисует renderCacheSettings() (web/src/interface/cache.js). -->
                                     <div class="cache-settings" id="cacheSettings"></div>
-                                    <p class="settings-help">Кеш хранится на этом устройстве и ускоряет открытие: аватарки, иконки серверов и профили показываются сразу, без ожидания сети. Когда места не хватает, первыми удаляются файлы, к которым обращались реже всего относительно их размера.</p>
+                                    <p class="settings-help">Лежит только на этом устройстве. Если места мало, первыми уходят файлы, к которым давно не обращались.</p>
                                 </div>
                             </section>
 
                             <section class="settings-card">
                                 <div class="settings-card-head">
                                     <div>
-                                        <span class="settings-kicker">Voice</span>
-                                        <h3 class="settings-card-title">Микрофон и динамики</h3>
+                                        <span class="settings-kicker">Звонки</span>
+                                        <h3 class="settings-card-title">Микрофон и звук</h3>
                                     </div>
-                                    <span class="settings-card-note">audio</span>
                                 </div>
                                 <div class="settings-stack">
                                     <label class="settings-field">
@@ -10452,24 +10380,12 @@ body[data-experimental-design="on"] ::-webkit-scrollbar-thumb:hover {
                                         <span>Громкость собеседников: <span id="masterVolumeValue">100%</span></span>
                                         <input type="range" min="0" max="200" step="5" value="100" id="inputMasterVolume" class="settings-range">
                                     </label>
-                                    <p class="settings-help">Применяется сразу, в том числе во время звонка. Громкость отдельного собеседника можно настроить через правый клик по контакту в списке чатов.</p>
-                                </div>
-                            </section>
-
-                            <section class="settings-card">
-                                <div class="settings-card-head">
-                                    <div>
-                                        <span class="settings-kicker">Debug</span>
-                                        <h3 class="settings-card-title">Трассировка звонков</h3>
-                                    </div>
-                                    <span class="settings-card-note">dev</span>
-                                </div>
-                                <div class="settings-stack">
+                                    <p class="settings-help">Действует сразу, в том числе во время звонка. Громкость одного человека — через правый клик по контакту.</p>
                                     <label class="server-toggle settings-toggle">
                                         <input id="inputVoiceTrace" type="checkbox">
                                         <span>
-                                            <strong>Включить трассировку во время звонка</strong>
-                                            <small>Показывает панель Voice health (ICE/RTP/candidate pair) и технический журнал сигналинга в панели звонка и в журнале событий — нужно только для диагностики проблем со связью</small>
+                                            <strong>Технический журнал звонка</strong>
+                                            <small>Панель ICE/RTP в карточке звонка. Нужна только если связь молчит или сыпется.</small>
                                         </span>
                                     </label>
                                 </div>
@@ -10477,84 +10393,54 @@ body[data-experimental-design="on"] ::-webkit-scrollbar-thumb:hover {
 
                             <div class="settings-grid">
                                 <div class="settings-column">
-                                    <section class="settings-card">
-                                        <div class="settings-card-head">
-                                            <div>
-                                                <span class="settings-kicker">Styler</span>
-                                                <h3 class="settings-card-title">Цветовая схема</h3>
-                                            </div>
-                                            <span class="settings-card-note">zali_styler</span>
-                                        </div>
-                                        <div class="theme-buttons settings-theme-grid">
-                                            <button class="btn-theme theme-lime" data-theme="lime" type="button">Lime</button>
-                                            <button class="btn-theme theme-cyber" data-theme="cyber" type="button">Cyberpunk</button>
-                                            <button class="btn-theme theme-matrix" data-theme="matrix" type="button">Matrix</button>
-                                            <button class="btn-theme theme-ocean" data-theme="ocean" type="button">Ocean</button>
-                                            <button class="btn-theme theme-mono" data-theme="mono" type="button">Monochrome</button>
-                                            <button class="btn-theme theme-ember" data-theme="ember" type="button">Ember</button>
-                                            <button class="btn-theme theme-aurora" data-theme="aurora" type="button">Aurora</button>
-                                            <button class="btn-theme theme-graphite" data-theme="graphite" type="button">Graphite</button>
-                                            <button class="btn-theme theme-rose" data-theme="rose" type="button">Rose</button>
-                                            <button class="btn-theme theme-violet" data-theme="violet" type="button">Violet</button>
-                                        </div>
-                                    </section>
-
-                                </div>
-
-                                <div class="settings-column">
                                     <section class="settings-card settings-card--logs">
                                         <div class="settings-card-head settings-card-head--tight">
                                             <div>
-                                                <span class="settings-kicker">Telemetry</span>
-                                                <h3 class="settings-card-title">Журнал событий</h3>
+                                                <span class="settings-kicker">Журнал</span>
+                                                <h3 class="settings-card-title">События клиента</h3>
                                             </div>
                                             <button class="btn-flat" id="clearLogs" type="button">Очистить</button>
                                         </div>
                                         <div class="log-body settings-log-body" id="logBody"></div>
                                     </section>
+                                </div>
 
+                                <div class="settings-column">
                                     <section class="settings-card">
                                         <div class="settings-card-head">
                                             <div>
-                                                <span class="settings-kicker">Security</span>
-                                                <h3 class="settings-card-title">Ключ шифрования</h3>
+                                                <span class="settings-kicker">Шифрование</span>
+                                                <h3 class="settings-card-title">Ключ переписок</h3>
                                             </div>
-                                            <span class="settings-card-note">zali_crypto</span>
                                         </div>
                                         <div class="settings-stack">
-                                            <input type="text" id="inputCryptoKey" class="settings-input" placeholder="Введите общий E2E-ключ">
-                                            <p class="settings-help">Текущий ключ: <code id="currentCryptoKeyValue" class="crypto-key-value">не задан</code></p>
+                                            <input type="text" id="inputCryptoKey" class="settings-input" placeholder="Общий ключ для старых личных чатов">
+                                            <p class="settings-help">Сейчас: <code id="currentCryptoKeyValue" class="crypto-key-value">не задан</code></p>
                                             <p class="settings-help" id="currentCryptoKeyMeta">Контекст: общий ключ</p>
-                                            <p class="settings-help">Измените секретную фразу для E2E-шифрования. Для чтения переписки собеседники должны использовать одинаковый ключ, и он не должен храниться в коде.</p>
+                                            <p class="settings-help">Нужен, чтобы открыть старые личные переписки. У собеседников фраза должна совпадать. Хранится только на этом устройстве.</p>
                                             <label class="server-toggle settings-toggle">
                                                 <input id="inputVaultCloudSyncEnabled" type="checkbox">
                                                 <span>
-                                                    <strong>Синхронизировать ключи в облако для аккаунта</strong>
-                                                    <small>Настройка сохраняется в аккаунте и работает на всех ваших устройствах</small>
+                                                    <strong>Синхронизировать ключи между устройствами</strong>
+                                                    <small>Копии ключей уходят в аккаунт и подхватываются на других ваших клиентах.</small>
                                                 </span>
                                             </label>
-                                            <div class="settings-card-head settings-card-head--tight" style="margin-top:8px">
-                                                <div>
-                                                    <strong>Сбросить и перевыпустить ключи</strong>
-                                                    <p class="settings-help" style="margin:2px 0 0">Удаляет все ключи переписок локально и на сервере, генерирует новую пару ECDH-ключей устройства и переустанавливает ключи при следующей отправке сообщения.</p>
-                                                </div>
-                                            </div>
-                                            <button class="btn-flat settings-logout" id="resetEncryptionKeysBtn" type="button">Сбросить ключи шифрования</button>
-                                            <p class="settings-help" id="resetEncryptionKeysStatus" hidden style="text-align:center;font-weight:600;margin-top:4px"></p>
+                                            <p class="settings-help">Сброс удаляет ключи переписок здесь и на сервере, выпускает новую пару устройства и заново договаривается при следующей отправке.</p>
+                                            <button class="btn-flat settings-logout" id="resetEncryptionKeysBtn" type="button">Сбросить ключи</button>
+                                            <p class="settings-help settings-status" id="resetEncryptionKeysStatus" hidden></p>
                                         </div>
                                     </section>
 
                                     <section class="settings-card settings-card--danger">
                                         <div class="settings-card-head">
                                             <div>
-                                                <span class="settings-kicker">Account</span>
+                                                <span class="settings-kicker">Аккаунт</span>
                                                 <h3 class="settings-card-title">Сеанс</h3>
                                             </div>
-                                            <span class="settings-card-note">Безопасно</span>
                                         </div>
-                                        <p class="settings-help">Завершите текущий вход, если хотите переключить аккаунт или выйти из гостевого режима.</p>
+                                        <p class="settings-help">Выйдите, чтобы сменить аккаунт или покинуть гостевой режим.</p>
                                         <div class="recent-accounts" id="recentAccounts"></div>
-                                        <button class="btn-flat settings-logout" id="settingsLogoutBtn" type="button">Выйти из аккаунта</button>
+                                        <button class="btn-flat settings-logout" id="settingsLogoutBtn" type="button">Выйти</button>
                                     </section>
                                 </div>
                             </div>
@@ -14942,8 +14828,8 @@ ZaliMixin(ZaliInterface, class {
 
     designModeCatalog() {
         return [
-            { id: 'classic', label: 'Классический', note: 'default', hint: 'Исходное оформление: градиенты, свечения, стеклянные панели.' },
-            { id: 'flat', label: 'Плоский', note: 'flat', hint: 'Тот же интерфейс без градиентов и свечений — матовые поверхности.' },
+            { id: 'classic', label: 'Классический', note: 'свечение', hint: 'Градиенты, свечения и стеклянные панели.' },
+            { id: 'flat', label: 'Плоский', note: 'матовый', hint: 'Те же экраны без градиентов и свечений.' },
         ];
     }
 
@@ -15231,9 +15117,9 @@ ZaliMixin(ZaliInterface, class {
 
     hubSegmentCatalog() {
         return [
-            { id: 'dm', label: 'ЛС', eyebrow: 'Direct', description: 'Личные диалоги и контакты' },
-            { id: 'servers', label: 'Сервера', eyebrow: 'Guilds', description: 'Каналы, роли и сообщества' },
-            { id: 'zalicoin', label: 'ZaliCoin', eyebrow: 'Economy', description: 'Баланс и переводы ZaliCoin' },
+            { id: 'dm', label: 'ЛС', eyebrow: 'Чаты', description: 'Личные диалоги и контакты' },
+            { id: 'servers', label: 'Серверы', eyebrow: 'Серверы', description: 'Каналы, роли и сообщества' },
+            { id: 'zalicoin', label: 'ZaliCoin', eyebrow: 'Монеты', description: 'Баланс и переводы' },
         ];
     }
 
@@ -15337,7 +15223,7 @@ ZaliMixin(ZaliInterface, class {
         const items = this.normalizeUiV2Segments(this.uiV2Segments)
             .map(id => catalog.get(id))
             .filter(Boolean);
-        items.push({ id: 'hub', label: 'Хаб', eyebrow: 'Home', description: 'Новости и подприложения' });
+        items.push({ id: 'hub', label: 'Хаб', eyebrow: 'Главная', description: 'Обзор и обновления' });
         const signature = items.map(item => item.id).join('|');
         const hasStableButtons = nav.dataset.segmentSignature === signature
             && nav.querySelector('.hub-segment-indicator')
@@ -16126,27 +16012,27 @@ ZaliMixin(ZaliInterface, class {
             {
                 id: 'all',
                 label: 'Кешировать всё',
-                note: 'all',
+                note: 'всё',
                 hint: 'Аватарки, ассеты серверов, профили, стикеры и любые вложения — включая видео и файлы.',
             },
             {
                 id: 'light',
+                label: 'Кешировать легковесное',
 """#,
     #"""
-                label: 'Кешировать легковесное',
-                note: 'default',
+                note: 'обычно',
                 hint: 'Всё необходимое плюс стикеры и медиа до 2 МБ. Тяжёлые вложения качаются заново.',
             },
             {
                 id: 'essential',
                 label: 'Кешировать необходимое',
-                note: 'min',
+                note: 'минимум',
                 hint: 'Только аватарки, иконки и баннеры серверов и карточки профилей.',
             },
             {
                 id: 'off',
                 label: 'Не кешировать',
-                note: 'off',
+                note: 'выкл',
                 hint: 'Ничего не хранится между запусками. Всё подгружается заново при каждом открытии.',
             },
         ];
@@ -20122,10 +20008,10 @@ ZaliMixin(ZaliInterface, class {
         // had not happened to open in that session.
         this.queueForceClaimScopes(
             Object.keys(this.loadStoredConversationKeys())
-"""#,
-    #"""
                 .filter(scope => scope.startsWith('dm:') || scope.startsWith('server:'))
         );
+"""#,
+    #"""
         // Every scope is about to get a brand-new key of our own making, so no scope
         // is waiting on an unreachable canonical key any more.
         this.saveScopeMarkMap(this.staleCanonicalStorageKey(), {});
@@ -24303,9 +24189,9 @@ ZaliMixin(ZaliInterface, class {
                 this.voiceDiag('socket-open', { generation, url: url.toString() }, 'SUCCESS');
                 this.addLogEntry({ type: 'SUCCESS', msg: 'Browser voice socket connected', ts: new Date().toLocaleTimeString() });
                 // This socket doubles as the pure-browser client's only realtime connection
+                // (messages + voice signaling both ride it — see onmessage below), so its
 """#,
     #"""
-                // (messages + voice signaling both ride it — see onmessage below), so its
                 // lifecycle IS the connection-status badge in that mode, same as native
                 // shells driving it via SET_CONNECTION_STATUS over their own transport.
                 this.setConnectionStatus(true);
@@ -28162,10 +28048,10 @@ ZaliMixin(ZaliInterface, class {
             // reload, app restart mid-call) has no callTrack, so its offer-owner
             // ladder falls through to voice.inviter; left empty it fell further, to
             // name order, while the other end still decided by callTrack.direction.
-"""#,
-    #"""
             // For every pair whose callee sorts before the caller the two ends then
             // disagreed: both owned the offer and both were impolite, or neither.
+"""#,
+    #"""
             // A room rebuilt by restore_dm_room carries no initiator — keep ours.
             if (this.voice.roomType === 'dm' && roomInitiator) {
                 this.voice.inviter = roomInitiator;
@@ -32304,11 +32190,11 @@ ZaliMixin(ZaliInterface, class {
             </a>`;
         }
 
-"""#,
-    #"""
         return `<a class="file-message" href="${this.esc(src)}" download="${this.esc(attachment.name)}">
             ${fileIcon}
             <span class="file-message-info">
+"""#,
+    #"""
                 <span class="file-message-name">${this.esc(attachment.name)}</span>
                 <span class="file-message-size">${this.esc(sizeLabel)}</span>
             </span>
@@ -36323,12 +36209,12 @@ ZaliMixin(ZaliInterface, class {
                     }
                     const populated = Object.entries(this.S.chats)
                         .filter(([, msgs]) => Array.isArray(msgs) && msgs.length > 0)
-"""#,
-    #"""
                         .sort((a, b) => this.messageTimestampValue(b[1][b[1].length - 1]?.timestamp) - this.messageTimestampValue(a[1][a[1].length - 1]?.timestamp));
                     return populated[0]?.[0] || null;
                 })();
 
+"""#,
+    #"""
                 if (!this.S.current && preferredPeer && preferredPeer !== this.S.current) {
                     this.switchChat(preferredPeer);
                 }
@@ -40407,14 +40293,14 @@ ZaliMixin(ZaliInterface, class {
                     this.renderServerModal();
                 }
             });
-"""#,
-    #"""
         }
         const pickServerAsset = (kind) => {
             const input = document.createElement('input');
             input.type = 'file';
             input.accept = 'image/*';
             input.style.position = 'fixed';
+"""#,
+    #"""
             input.style.left = '-9999px';
             input.style.top = '0';
             document.body.appendChild(input);

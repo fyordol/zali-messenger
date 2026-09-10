@@ -11,7 +11,7 @@
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="style.css?v=20260910-rev20">
+    <link rel="stylesheet" href="style.css?v=20260910-rev21">
     <title>ZaliMessenger</title>
 </head>
 <body>
@@ -337,45 +337,29 @@
                 <div id="viewSettings" class="view">
                     <div class="logs-bar settings-topbar">
                         <div class="settings-topcopy">
-                            <span class="settings-kicker">Центр управления</span>
                             <span class="logs-title">Настройки</span>
-                            <p class="settings-lead">Кастомизация интерфейса, журнал событий и действия аккаунта в одном месте.</p>
+                            <p class="settings-lead">Тема, звук, кеш и аккаунт на этом устройстве.</p>
                         </div>
                         <button class="btn-flat" id="closeSettings">Назад</button>
                     </div>
                     <div class="settings-body settings-scroll">
                         <div class="settings-shell">
-                            <section class="settings-card settings-hero">
-                                <div class="settings-hero-copy">
-                                    <span class="settings-kicker">Быстрый обзор</span>
-                                    <h2>Настройте внешний вид, проверьте журнал и управляйте параметрами без лишних переходов.</h2>
-                                    <p>Меню разделено на понятные блоки, чтобы основные действия были под рукой и не терялись в длинном списке.</p>
-                                </div>
-                                <div class="settings-chips">
-                                    <span class="settings-chip">Styler</span>
-                                    <span class="settings-chip">Logs</span>
-                                    <span class="settings-chip">Crypto</span>
-                                    <span class="settings-chip">Account</span>
-                                </div>
-                            </section>
-
                             <section class="settings-card">
                                 <div class="settings-card-head">
                                     <div>
-                                        <span class="settings-kicker">Profile</span>
-                                        <h3 class="settings-card-title">Аватар профиля</h3>
+                                        <span class="settings-kicker">Профиль</span>
+                                        <h3 class="settings-card-title">Аватар</h3>
                                     </div>
-                                    <span class="settings-card-note" id="avatarTargetLabel">sync</span>
                                 </div>
                                 <div class="avatar-editor">
                                     <div class="avatar-editor-preview">
                                         <div class="ava avatar-preview" id="avatarPreview">Z</div>
                                     </div>
                                     <div class="avatar-editor-copy">
-                                        <p class="settings-help">Загрузите картинку для своего профиля — она сохранится на сервере и будет видна всем вашим собеседникам на других устройствах. После обновления аватар автоматически подтянется в списке контактов, шапке чата и профиле.</p>
+                                        <p class="settings-help">Картинка видна всем собеседникам. После загрузки она появится в чатах и профиле.</p>
                                         <div class="avatar-editor-actions">
                                             <button class="btn-flat avatar-upload-btn" id="avatarUploadBtn" type="button">Загрузить</button>
-                                            <button class="btn-flat" id="avatarResetBtn" type="button">Сбросить аватар</button>
+                                            <button class="btn-flat" id="avatarResetBtn" type="button">Удалить</button>
                                         </div>
                                     </div>
                                 </div>
@@ -384,29 +368,28 @@
                             <section class="settings-card">
                                 <div class="settings-card-head">
                                     <div>
-                                        <span class="settings-kicker">Interface v2</span>
-                                        <h3 class="settings-card-title">Новая навигация и Хаб</h3>
+                                        <span class="settings-kicker">Навигация</span>
+                                        <h3 class="settings-card-title">Кнопки разделов</h3>
                                     </div>
-                                    <span class="settings-card-note">experimental</span>
                                 </div>
                                 <div class="settings-stack">
                                     <label class="server-toggle settings-toggle">
                                         <input id="inputUiV2Enabled" type="checkbox">
                                         <span>
-                                            <strong>Включить новый интерфейс</strong>
-                                            <small>Скрывает переключатель ЛС/Сервера и показывает сегменты под названием приложения</small>
+                                            <strong>Сегменты под названием приложения</strong>
+                                            <small>Вместо переключателя «Чаты / Серверы» — кнопки разделов. Хаб всегда последняя.</small>
                                         </span>
                                     </label>
                                     <div class="settings-control-box">
                                         <div class="settings-card-head settings-card-head--tight">
                                             <div>
-                                                <span class="settings-kicker">Segments</span>
-                                                <h3 class="settings-card-title">Кнопки под названием</h3>
+                                                <span class="settings-kicker">Состав</span>
+                                                <h3 class="settings-card-title">Что показать перед Хабом</h3>
                                             </div>
                                             <span class="settings-card-note" id="hubSegmentsCount">3 / 4</span>
                                         </div>
                                         <div class="hub-segment-settings" id="hubSegmentSettings"></div>
-                                        <p class="settings-help">Выберите от 1 до 3 разделов перед Хабом. Последняя кнопка всегда Хаб, поэтому всего будет от 2 до 4 кнопок.</p>
+                                        <p class="settings-help">Можно выбрать от одного до трёх разделов. Всего кнопок будет от двух до четырёх.</p>
                                     </div>
                                 </div>
                             </section>
@@ -414,41 +397,48 @@
                             <section class="settings-card">
                                 <div class="settings-card-head">
                                     <div>
-                                        <span class="settings-kicker">Тема интерфейса</span>
-                                        <h3 class="settings-card-title">Стиль оформления</h3>
+                                        <span class="settings-kicker">Вид</span>
+                                        <h3 class="settings-card-title">Оформление</h3>
                                     </div>
-                                    <span class="settings-card-note">design</span>
                                 </div>
                                 <div class="settings-stack">
                                     <div class="design-mode-options" id="designModeOptions"></div>
-                                    <p class="settings-help">Цветовая схема, шрифты и вся логика приложения не меняются — переключается только оформление. Выбор сохраняется на этом устройстве.</p>
+                                    <p class="settings-help">Классический оставляет градиенты и свечения, плоский убирает их. Цвета ниже — отдельно.</p>
+                                    <div class="theme-buttons settings-theme-grid">
+                                        <button class="btn-theme theme-lime" data-theme="lime" type="button">Лайм</button>
+                                        <button class="btn-theme theme-cyber" data-theme="cyber" type="button">Киберпанк</button>
+                                        <button class="btn-theme theme-matrix" data-theme="matrix" type="button">Матрица</button>
+                                        <button class="btn-theme theme-ocean" data-theme="ocean" type="button">Океан</button>
+                                        <button class="btn-theme theme-mono" data-theme="mono" type="button">Моно</button>
+                                        <button class="btn-theme theme-ember" data-theme="ember" type="button">Уголь</button>
+                                        <button class="btn-theme theme-aurora" data-theme="aurora" type="button">Сияние</button>
+                                        <button class="btn-theme theme-graphite" data-theme="graphite" type="button">Графит</button>
+                                        <button class="btn-theme theme-rose" data-theme="rose" type="button">Роза</button>
+                                        <button class="btn-theme theme-violet" data-theme="violet" type="button">Фиолет</button>
+                                    </div>
                                 </div>
                             </section>
 
                             <section class="settings-card">
                                 <div class="settings-card-head">
                                     <div>
-                                        <span class="settings-kicker">Storage</span>
-                                        <h3 class="settings-card-title">Кеш аватарок и медиа</h3>
+                                        <span class="settings-kicker">Память</span>
+                                        <h3 class="settings-card-title">Кеш картинок</h3>
                                     </div>
-                                    <span class="settings-card-note">cache</span>
                                 </div>
                                 <div class="settings-stack">
-                                    <!-- Содержимое рисует renderCacheSettings() (web/src/interface/cache.js):
-                                         режимы, слайдер потолка и сводка обращений считаются из индекса
-                                         в памяти и меняются на каждой записи в кеш. -->
+                                    <!-- Содержимое рисует renderCacheSettings() (web/src/interface/cache.js). -->
                                     <div class="cache-settings" id="cacheSettings"></div>
-                                    <p class="settings-help">Кеш хранится на этом устройстве и ускоряет открытие: аватарки, иконки серверов и профили показываются сразу, без ожидания сети. Когда места не хватает, первыми удаляются файлы, к которым обращались реже всего относительно их размера.</p>
+                                    <p class="settings-help">Лежит только на этом устройстве. Если места мало, первыми уходят файлы, к которым давно не обращались.</p>
                                 </div>
                             </section>
 
                             <section class="settings-card">
                                 <div class="settings-card-head">
                                     <div>
-                                        <span class="settings-kicker">Voice</span>
-                                        <h3 class="settings-card-title">Микрофон и динамики</h3>
+                                        <span class="settings-kicker">Звонки</span>
+                                        <h3 class="settings-card-title">Микрофон и звук</h3>
                                     </div>
-                                    <span class="settings-card-note">audio</span>
                                 </div>
                                 <div class="settings-stack">
                                     <label class="settings-field">
@@ -463,24 +453,12 @@
                                         <span>Громкость собеседников: <span id="masterVolumeValue">100%</span></span>
                                         <input type="range" min="0" max="200" step="5" value="100" id="inputMasterVolume" class="settings-range">
                                     </label>
-                                    <p class="settings-help">Применяется сразу, в том числе во время звонка. Громкость отдельного собеседника можно настроить через правый клик по контакту в списке чатов.</p>
-                                </div>
-                            </section>
-
-                            <section class="settings-card">
-                                <div class="settings-card-head">
-                                    <div>
-                                        <span class="settings-kicker">Debug</span>
-                                        <h3 class="settings-card-title">Трассировка звонков</h3>
-                                    </div>
-                                    <span class="settings-card-note">dev</span>
-                                </div>
-                                <div class="settings-stack">
+                                    <p class="settings-help">Действует сразу, в том числе во время звонка. Громкость одного человека — через правый клик по контакту.</p>
                                     <label class="server-toggle settings-toggle">
                                         <input id="inputVoiceTrace" type="checkbox">
                                         <span>
-                                            <strong>Включить трассировку во время звонка</strong>
-                                            <small>Показывает панель Voice health (ICE/RTP/candidate pair) и технический журнал сигналинга в панели звонка и в журнале событий — нужно только для диагностики проблем со связью</small>
+                                            <strong>Технический журнал звонка</strong>
+                                            <small>Панель ICE/RTP в карточке звонка. Нужна только если связь молчит или сыпется.</small>
                                         </span>
                                     </label>
                                 </div>
@@ -488,84 +466,54 @@
 
                             <div class="settings-grid">
                                 <div class="settings-column">
-                                    <section class="settings-card">
-                                        <div class="settings-card-head">
-                                            <div>
-                                                <span class="settings-kicker">Styler</span>
-                                                <h3 class="settings-card-title">Цветовая схема</h3>
-                                            </div>
-                                            <span class="settings-card-note">zali_styler</span>
-                                        </div>
-                                        <div class="theme-buttons settings-theme-grid">
-                                            <button class="btn-theme theme-lime" data-theme="lime" type="button">Lime</button>
-                                            <button class="btn-theme theme-cyber" data-theme="cyber" type="button">Cyberpunk</button>
-                                            <button class="btn-theme theme-matrix" data-theme="matrix" type="button">Matrix</button>
-                                            <button class="btn-theme theme-ocean" data-theme="ocean" type="button">Ocean</button>
-                                            <button class="btn-theme theme-mono" data-theme="mono" type="button">Monochrome</button>
-                                            <button class="btn-theme theme-ember" data-theme="ember" type="button">Ember</button>
-                                            <button class="btn-theme theme-aurora" data-theme="aurora" type="button">Aurora</button>
-                                            <button class="btn-theme theme-graphite" data-theme="graphite" type="button">Graphite</button>
-                                            <button class="btn-theme theme-rose" data-theme="rose" type="button">Rose</button>
-                                            <button class="btn-theme theme-violet" data-theme="violet" type="button">Violet</button>
-                                        </div>
-                                    </section>
-
-                                </div>
-
-                                <div class="settings-column">
                                     <section class="settings-card settings-card--logs">
                                         <div class="settings-card-head settings-card-head--tight">
                                             <div>
-                                                <span class="settings-kicker">Telemetry</span>
-                                                <h3 class="settings-card-title">Журнал событий</h3>
+                                                <span class="settings-kicker">Журнал</span>
+                                                <h3 class="settings-card-title">События клиента</h3>
                                             </div>
                                             <button class="btn-flat" id="clearLogs" type="button">Очистить</button>
                                         </div>
                                         <div class="log-body settings-log-body" id="logBody"></div>
                                     </section>
+                                </div>
 
+                                <div class="settings-column">
                                     <section class="settings-card">
                                         <div class="settings-card-head">
                                             <div>
-                                                <span class="settings-kicker">Security</span>
-                                                <h3 class="settings-card-title">Ключ шифрования</h3>
+                                                <span class="settings-kicker">Шифрование</span>
+                                                <h3 class="settings-card-title">Ключ переписок</h3>
                                             </div>
-                                            <span class="settings-card-note">zali_crypto</span>
                                         </div>
                                         <div class="settings-stack">
-                                            <input type="text" id="inputCryptoKey" class="settings-input" placeholder="Введите общий E2E-ключ">
-                                            <p class="settings-help">Текущий ключ: <code id="currentCryptoKeyValue" class="crypto-key-value">не задан</code></p>
+                                            <input type="text" id="inputCryptoKey" class="settings-input" placeholder="Общий ключ для старых личных чатов">
+                                            <p class="settings-help">Сейчас: <code id="currentCryptoKeyValue" class="crypto-key-value">не задан</code></p>
                                             <p class="settings-help" id="currentCryptoKeyMeta">Контекст: общий ключ</p>
-                                            <p class="settings-help">Измените секретную фразу для E2E-шифрования. Для чтения переписки собеседники должны использовать одинаковый ключ, и он не должен храниться в коде.</p>
+                                            <p class="settings-help">Нужен, чтобы открыть старые личные переписки. У собеседников фраза должна совпадать. Хранится только на этом устройстве.</p>
                                             <label class="server-toggle settings-toggle">
                                                 <input id="inputVaultCloudSyncEnabled" type="checkbox">
                                                 <span>
-                                                    <strong>Синхронизировать ключи в облако для аккаунта</strong>
-                                                    <small>Настройка сохраняется в аккаунте и работает на всех ваших устройствах</small>
+                                                    <strong>Синхронизировать ключи между устройствами</strong>
+                                                    <small>Копии ключей уходят в аккаунт и подхватываются на других ваших клиентах.</small>
                                                 </span>
                                             </label>
-                                            <div class="settings-card-head settings-card-head--tight" style="margin-top:8px">
-                                                <div>
-                                                    <strong>Сбросить и перевыпустить ключи</strong>
-                                                    <p class="settings-help" style="margin:2px 0 0">Удаляет все ключи переписок локально и на сервере, генерирует новую пару ECDH-ключей устройства и переустанавливает ключи при следующей отправке сообщения.</p>
-                                                </div>
-                                            </div>
-                                            <button class="btn-flat settings-logout" id="resetEncryptionKeysBtn" type="button">Сбросить ключи шифрования</button>
-                                            <p class="settings-help" id="resetEncryptionKeysStatus" hidden style="text-align:center;font-weight:600;margin-top:4px"></p>
+                                            <p class="settings-help">Сброс удаляет ключи переписок здесь и на сервере, выпускает новую пару устройства и заново договаривается при следующей отправке.</p>
+                                            <button class="btn-flat settings-logout" id="resetEncryptionKeysBtn" type="button">Сбросить ключи</button>
+                                            <p class="settings-help settings-status" id="resetEncryptionKeysStatus" hidden></p>
                                         </div>
                                     </section>
 
                                     <section class="settings-card settings-card--danger">
                                         <div class="settings-card-head">
                                             <div>
-                                                <span class="settings-kicker">Account</span>
+                                                <span class="settings-kicker">Аккаунт</span>
                                                 <h3 class="settings-card-title">Сеанс</h3>
                                             </div>
-                                            <span class="settings-card-note">Безопасно</span>
                                         </div>
-                                        <p class="settings-help">Завершите текущий вход, если хотите переключить аккаунт или выйти из гостевого режима.</p>
+                                        <p class="settings-help">Выйдите, чтобы сменить аккаунт или покинуть гостевой режим.</p>
                                         <div class="recent-accounts" id="recentAccounts"></div>
-                                        <button class="btn-flat settings-logout" id="settingsLogoutBtn" type="button">Выйти из аккаунта</button>
+                                        <button class="btn-flat settings-logout" id="settingsLogoutBtn" type="button">Выйти</button>
                                     </section>
                                 </div>
                             </div>
@@ -1035,6 +983,6 @@
         <button class="a2hs-banner-close" id="a2hsBannerClose" type="button" aria-label="Закрыть">&times;</button>
     </div>
 
-    <script src="app.js?v=20260910-rev20"></script>
+    <script src="app.js?v=20260910-rev21"></script>
 </body>
 </html>

@@ -3911,8 +3911,8 @@ ZaliMixin(ZaliInterface, class {
 
     designModeCatalog() {
         return [
-            { id: 'classic', label: 'Классический', note: 'default', hint: 'Исходное оформление: градиенты, свечения, стеклянные панели.' },
-            { id: 'flat', label: 'Плоский', note: 'flat', hint: 'Тот же интерфейс без градиентов и свечений — матовые поверхности.' },
+            { id: 'classic', label: 'Классический', note: 'свечение', hint: 'Градиенты, свечения и стеклянные панели.' },
+            { id: 'flat', label: 'Плоский', note: 'матовый', hint: 'Те же экраны без градиентов и свечений.' },
         ];
     }
 
@@ -4200,9 +4200,9 @@ ZaliMixin(ZaliInterface, class {
 
     hubSegmentCatalog() {
         return [
-            { id: 'dm', label: 'ЛС', eyebrow: 'Direct', description: 'Личные диалоги и контакты' },
-            { id: 'servers', label: 'Сервера', eyebrow: 'Guilds', description: 'Каналы, роли и сообщества' },
-            { id: 'zalicoin', label: 'ZaliCoin', eyebrow: 'Economy', description: 'Баланс и переводы ZaliCoin' },
+            { id: 'dm', label: 'ЛС', eyebrow: 'Чаты', description: 'Личные диалоги и контакты' },
+            { id: 'servers', label: 'Серверы', eyebrow: 'Серверы', description: 'Каналы, роли и сообщества' },
+            { id: 'zalicoin', label: 'ZaliCoin', eyebrow: 'Монеты', description: 'Баланс и переводы' },
         ];
     }
 
@@ -4306,7 +4306,7 @@ ZaliMixin(ZaliInterface, class {
         const items = this.normalizeUiV2Segments(this.uiV2Segments)
             .map(id => catalog.get(id))
             .filter(Boolean);
-        items.push({ id: 'hub', label: 'Хаб', eyebrow: 'Home', description: 'Новости и подприложения' });
+        items.push({ id: 'hub', label: 'Хаб', eyebrow: 'Главная', description: 'Обзор и обновления' });
         const signature = items.map(item => item.id).join('|');
         const hasStableButtons = nav.dataset.segmentSignature === signature
             && nav.querySelector('.hub-segment-indicator')
@@ -5095,25 +5095,25 @@ ZaliMixin(ZaliInterface, class {
             {
                 id: 'all',
                 label: 'Кешировать всё',
-                note: 'all',
+                note: 'всё',
                 hint: 'Аватарки, ассеты серверов, профили, стикеры и любые вложения — включая видео и файлы.',
             },
             {
                 id: 'light',
                 label: 'Кешировать легковесное',
-                note: 'default',
+                note: 'обычно',
                 hint: 'Всё необходимое плюс стикеры и медиа до 2 МБ. Тяжёлые вложения качаются заново.',
             },
             {
                 id: 'essential',
                 label: 'Кешировать необходимое',
-                note: 'min',
+                note: 'минимум',
                 hint: 'Только аватарки, иконки и баннеры серверов и карточки профилей.',
             },
             {
                 id: 'off',
                 label: 'Не кешировать',
-                note: 'off',
+                note: 'выкл',
                 hint: 'Ничего не хранится между запусками. Всё подгружается заново при каждом открытии.',
             },
         ];
