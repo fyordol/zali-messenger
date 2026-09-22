@@ -506,6 +506,11 @@ class MainActivity : ComponentActivity() {
                                 }
 
                                 override fun onPageStarted(view: WebView, url: String?, favicon: Bitmap?) {
+                                    // Документ ещё не тот, в котором живёт UI: about:blank,
+                                    // следующая загрузка index.html, любой reload. Скрипт
+                                    // перехода из уведомления, внедрённый сюда, умирает вместе
+                                    // со страницей — ждём onPageFinished уже загруженного UI.
+                                    webPageReady = false
                                     if (!NativeBridge.documentStartScriptSupported) {
                                         view.evaluateJavascript(nativeBridge.documentStartScript(), null)
                                     }
@@ -530,10 +535,15 @@ class MainActivity : ComponentActivity() {
                                 override fun onPageFinished(view: WebView, url: String?) {
                                     // A fresh document has no inline style on <html> yet.
                                     applySafeAreaInsets(view)
-                                    // Переход из уведомления — только в загруженный документ: скрипт,
-                                    // выполненный до загрузки, живёт в пустой странице и умирает с ней.
-                                    webPageReady = true
-                                    consumeNotificationIntent()
+                                    // Chromium часто отдаёт onPageFinished(about:blank) до
+                                    // index.html. 0.2b45 ждал любой finished — и снова внедрял
+                                    // переход в пустую страницу, которая тут же умирает.
+                                    // isBundledOrigin нарочно пускает about:blank (навигация),
+                                    // здесь нужен именно UI из ассетов.
+                                    if (url != null && url.startsWith(ASSET_BASE_URL, ignoreCase = true)) {
+                                        webPageReady = true
+                                        consumeNotificationIntent()
+                                    }
                                     view.postDelayed({
                                         val root = view.rootView
                                         root.invalidate()
