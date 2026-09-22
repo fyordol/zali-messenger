@@ -78,11 +78,21 @@ class PushMessagingService : FirebaseMessagingService() {
     ): ZaliCoreBridge.MessagePayload? {
         if (!ZaliCoreBridge.isAvailable) return null
         val conversationKeys = readConversationKeys(session.username).toMutableMap()
-        // Ключ канала выводится из scope (deriveServerChannelKey в вебе) и попадает в файл,
-        // только когда канал открывали на этом устройстве, — выводим его сами.
+        // Ключ канала выводится из scope (deriveServerChannelKey в вебе). В файл он
+        // попадает, только когда канал открывали на этом устройстве; плюс там может
+        // лежать старый случайный ключ до 0.2b31. Пуш — новое сообщение, оно почти
+        // всегда на выведенном ключе: ставим его первым кандидатом, прежний не
+        // выбрасываем (история до перехода остаётся читаемой).
         if (serverId != null && channelId != null) {
             ZaliCoreBridge.serverConversationScope(serverId, channelId)?.let { scope ->
-                if (conversationKeys[scope].isNullOrBlank()) conversationKeys[scope] = derivedChannelKey(scope)
+                val derived = derivedChannelKey(scope)
+                val stored = conversationKeys[scope]
+                if (stored.isNullOrBlank()) {
+                    conversationKeys[scope] = derived
+                } else if (stored != derived) {
+                    conversationKeys["alt:$scope:derived"] = stored
+                    conversationKeys[scope] = derived
+                }
             }
         }
         val keys = ZaliCoreBridge.candidateMessageKeys(
